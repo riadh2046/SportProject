@@ -1,0 +1,55 @@
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-9 mx-auto text-center">
+        <h1 class="text-white">Search</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="site-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+
+        <form [formGroup]="searchMatchForm">
+          <div class="form-group">
+            <input type="number" formControlName="ScoreOne" class="form-control"
+              placeholder="Insert ScoreOne">
+          </div>
+          <div *ngIf="searchMatchForm.controls['ScoreOne'].invalid &&
+            (searchMatchForm.controls['ScoreOne'].dirty ||
+            searchMatchForm.controls['ScoreOne'].touched)">
+            <div *ngIf="searchMatchForm.controls['ScoreOne'].errors?.['required']">
+             ScoreOne is required
+            </div>
+            <div *ngIf="searchMatchForm.controls['ScoreOne'].errors?.['minlength']">
+              ScoreOne must have at least 3 characters
+            </div>
+
+          </div>
+          <div class="form-group">
+            <input type="number" formControlName="ScoreTow" class="form-control"
+              placeholder="Insert ScoreTow">
+          </div>
+          
+
+
+          <div class="form-group">
+            <input type="submit" [disabled]="searchMatchForm.invalid" (click)="search()" class="btn btn-primary py-3 px-5" value="Search">
+          </div>
+        </form>
+      </div>
+
+    </div>
+    <div *ngFor="let s of resultTAb">
+      <app-result [obj]="s"></app-result>
+    </div>
+    <div *ngIf="resultTAb.length ==0">
+      No MAtches Found
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+.win{
+    color: green;
+    font-size: 100px;
+}
+
+.loss{
+    color: red;
+    font-size: 50px;
+}
+
+.Draw{
+    color: blue;
+    font-size: 35px;
+}
+
+
+

@@ -1,0 +1,21 @@
+<thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Owner</th>
+        <th>Foundation</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let t of teamsTab">
+                <td>{{t._id}}</td>
+                <td>{{t.Name}}</td>
+                <td>{{t.Owner}}</td>
+                <td>{{t.Foundation}}</td>
+        <td><button type="button" class="btn btn-success" (click)="goToInfo(t.id)">Display</button>
+            <button type="button" class="btn btn-info" (click)="goToEdit(t.id)">Edit</button>
+            <button type="button" class="btn btn-danger" (click)="deleteMatch(t.id)">Delete</button>
+        </td>
+    </tr>
+    </tbody>
+    

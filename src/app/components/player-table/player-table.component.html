@@ -1,0 +1,22 @@
+<thead>
+    <tr>
+        <th>ID</th>
+        <th>Number</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Position</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of playersTab">
+                <td>{{p.id}}</td>
+                <td>{{p.number}}</td>
+                <td>{{p.name}}</td>
+                <td>{{p.age}}</td>
+                <td>{{p.position}}</td>
+        <th><button type="button" class="btn btn-success" (click)="goToInfo(p.id)">Display</button>
+            <button type="button" class="btn btn-info" (click)="goToEdit(p.id)">Edit</button>
+            <button type="button" class="btn btn-danger"(click)="deletePlayer(p.id)">Delete</button>
+        </th>
+    </tr>
+    </tbody>

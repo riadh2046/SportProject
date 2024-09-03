@@ -1,0 +1,25 @@
+<thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+       <th> Country</th>
+       <th>Capacity</th>
+       <th>Action</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let m of stadiumsTab">
+        <td>{{m.ID}}</td>
+        <td>{{m.Name}}</td>
+        <td>{{m.Country}}</td>
+        <td>{{m.Capacity}}</td>
+       
+        
+<td>
+    <button type="button" class="btn btn-success">Display</button>
+    <button type="button" class="btn btn-info ml-1 mr-1">Edit</button>
+    <button type="button" class="btn btn-danger">Delete</button>
+    </td>
+
+</tr>
+</tbody>
